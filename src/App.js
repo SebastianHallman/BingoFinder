@@ -10,7 +10,7 @@ function App() {
   const [scrambledWord, setScrambledWord] = useState('');
   const [currentGuess, setCurrentGuess] = useState('')
 
-  const url = 'https://random-word-api.herokuapp.com/word?length=7';
+  const url = 'https://random-word-api.herokuapp.com/word?length=7'; // url
 
   const fetchWord = () => {
    fetch(url).then(word => {return word.json()}).then(w => {setCorrectWord(w[0])}); 
