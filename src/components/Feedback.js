@@ -1,0 +1,5 @@
+export function Feedback(props) {
+  if (props.word == props.guess) {
+    return <h3>Nice one!</h3>;
+  }
+}
