@@ -8,7 +8,7 @@ function App() {
   const [correctWord, setCorrectWord] = useState('');
   const [scrambledWord, setScrambledWord] = useState('');
   const [currentGuess, setCurrentGuess] = useState('')
-
+  const [showWord, setShowWord] = useState(false)
   const url = 'https://random-word-api.herokuapp.com/word?length=7'; // url
 
   const fetchWord = () => {
@@ -52,11 +52,23 @@ function App() {
       
     }
   }, [currentGuess, correctWord])
+
+  useEffect(() => {
+    if (showWord) {
+      setTimeout(() => setShowWord(false), 3000);
+      setTimeout(fetchWord, 3000);
+      setTimeout(() => setCurrentGuess(""), 3000)
+    }
+  }, [showWord])
     
   const handleGuessChange = (e) => {
     const value = e.target.value;
     setCurrentGuess(value);
     
+  }
+
+  const revealWord = () => {
+    setShowWord(true);
   }
 
   return (
@@ -65,8 +77,8 @@ function App() {
         <h1>Bingo finder</h1>
         <p>Can you find the 7 word from these tiles?</p>
       </div>
-      <Game scrambledWord={scrambledWord} currentGuess={currentGuess} handleGuessChange={handleGuessChange}/>
-      <Feedback word={correctWord} guess={currentGuess}/>
+      <Game scrambledWord={scrambledWord} currentGuess={currentGuess} handleGuessChange={handleGuessChange} handleWordReveal={revealWord}/>
+      <Feedback word={correctWord} guess={currentGuess} show={showWord}/>
 
     </div>
   );

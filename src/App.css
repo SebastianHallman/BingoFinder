@@ -60,6 +60,7 @@ input {
 
 .input {
   position: fixed;
+  display: inline;
   bottom: 0;
   left: 0;
   right: 0;
@@ -77,6 +78,20 @@ input {
   padding: 50px;
   
 }
+
+input[type=button] {
+  display: none;
+}
+
+
+
+.reveal{
+  margin-top: 20px;
+  padding: 30px;
+  background-color: greenyellow;
+  font-size: 14px;
+  font-weight: 900;
+}
 @media (max-width: 1100px) {
   #guess {
     display: inline;
@@ -88,5 +103,15 @@ input {
   
   .input p {
     display: none;
+  }
+
+  .reveal {
+    display: none;
+  }
+
+  input[type=button] {
+    display: inline;
+    background-color: greenyellow;
+    font-weight: 900;
   }
 }
