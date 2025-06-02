@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"  # Eller ditt byggkommando (t.ex. yarn build, vite build)
+  publish = "build/"       # Eller "dist/" för Vite, eller din byggmapp
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
