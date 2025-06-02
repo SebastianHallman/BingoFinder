@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Game } from './components/Game';
@@ -28,7 +27,7 @@ function App() {
       setCurrentGuess(old => old + e.key)
     }
 
-    if (e.keyCode ==  8) {
+    if (e.keyCode ===  8) {
       setCurrentGuess(old => old.substring(0, old.length - 1))
     }
 
@@ -52,7 +51,7 @@ function App() {
       document.getElementById("guess").value = '';
       
     }
-  }, [currentGuess])
+  }, [currentGuess, correctWord])
     
   const handleGuessChange = (e) => {
     const value = e.target.value;

@@ -86,4 +86,7 @@ input {
     display: none;
   }
   
+  .input p {
+    display: none;
+  }
 }

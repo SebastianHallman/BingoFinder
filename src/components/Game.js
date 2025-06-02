@@ -7,10 +7,13 @@ export function Game(props) {
     </div>
     <br />
     <div className='input'>
+      <p>Type the word with your keyboard</p>
       <div className='rack'>
+        
         <ScrambledTiles scrambledWord={props.currentGuess} />
+        
       </div>
-      <input id="guess" onChange={props.handleGuessChange} type='text' />
+      <input id="guess" onChange={props.handleGuessChange} type='text' placeholder='The word is...'/>
     </div>
 
 
